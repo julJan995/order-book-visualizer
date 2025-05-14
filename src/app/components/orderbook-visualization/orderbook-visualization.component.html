@@ -1,0 +1,14 @@
+<div class="orderbook-visualization">
+    <h1>Order Book Visualization</h1>
+  
+    <div class="visualization-container">
+      <app-time-controls
+        [timestamps]="timestamps()"
+        [currentIndex]="currentIndex()"
+        (indexChange)="onIndexChange($event)">
+      </app-time-controls>
+  
+      <app-depth-chart [data]="currentSnapshot()">
+      </app-depth-chart>
+    </div>
+  </div>

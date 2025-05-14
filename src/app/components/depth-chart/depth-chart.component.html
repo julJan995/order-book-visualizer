@@ -1,0 +1,20 @@
+<div class="depth-chart-container">
+    @if (!data()) {
+    <div class="no-data">
+        <p>No data available</p>
+    </div>
+    }
+
+    @if (data() && !isBrowser) {
+    <div class="server-message">
+        <p>Chart will be rendered in browser</p>
+    </div>
+    }
+
+    @if (data() && isBrowser) {
+    <div class="chart-wrapper">
+        <canvas baseChart [type]="'bar'" [data]="barChartData()" [options]="barChartOptions">
+        </canvas>
+    </div>
+    }
+</div>
